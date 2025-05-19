@@ -1,0 +1,45 @@
+11:43:11 - Connecting to OPC UA server "opc.tcp://localhost:7001"
+11:43:13 - Loading operation list
+There are 4 Requests in the Operation List
+-----------------------------------------------------------------
+Starting Operation B
+11:43:13 - Transferring a New Workpiece with ID: WID_TRD123
+11:43:18 - Connecting to KUKA robot
+11:43:18 - Starting Kuka Robot Operation ---> Pick & Place Started
+11:43:24 - KUKA Operation Pick & Place Completed
+11:43:25 - Opening CNC Lathe Door
+11:43:28 - Closing CNC Lathe Door
+11:43:29 - Starting Lathe Operation ---> Turning & Threading
+11:43:44 - Operation B Completed
+-----------------------------------------------------------------
+Starting Operation A
+11:43:45 - Transferring a New Workpiece with ID: WID_DRL937
+11:43:51 - Connecting to KUKA robot
+11:43:51 - Starting Kuka Robot Operation ---> Pick & Place Started
+11:43:57 - KUKA Operation Pick & Place Completed
+11:43:57 - Opening CNC Lathe Door
+11:43:58 - Closing CNC Lathe Door
+11:43:59 - Starting Lathe Operation ---> Turning & Drilling
+11:44:14 - Operation A Completed
+-----------------------------------------------------------------
+Starting Operation A
+11:44:15 - Transferring a New Workpiece with ID: WID_DRL677
+11:44:20 - Connecting to KUKA robot
+11:44:20 - Starting Kuka Robot Operation ---> Pick & Place Started
+11:44:26 - KUKA Operation Pick & Place Completed
+11:44:27 - Opening CNC Lathe Door
+11:44:28 - Closing CNC Lathe Door
+11:44:29 - Starting Lathe Operation ---> Turning & Drilling
+11:44:43 - Operation A Completed
+-----------------------------------------------------------------
+Starting Operation A
+11:44:44 - Transferring a New Workpiece with ID: WID_DRL707
+11:44:49 - Connecting to KUKA robot
+11:44:49 - Starting Kuka Robot Operation ---> Pick & Place Started
+11:44:55 - KUKA Operation Pick & Place Completed
+11:44:56 - Opening CNC Lathe Door
+11:44:57 - Closing CNC Lathe Door
+11:44:58 - Starting Lathe Operation ---> Turning & Drilling
+11:45:12 - Operation A Completed
+
+Program completed for Group 00 on 2025-05-20 11:45:13. Operations executed: Operation B, Operation A, Operation A, Operation A

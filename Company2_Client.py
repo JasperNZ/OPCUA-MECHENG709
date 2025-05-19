@@ -24,7 +24,7 @@ Workpiece = 'null'
 # TODO: assign correct endpoint URL for client code
 # Make sure url is same as server url
 
-end_point = *
+end_point = "opc.tcp://localhost:7001"
 ######################################################################################
 
 try:
@@ -62,23 +62,23 @@ method = objects_node.get_children()
 ##################################################################################################
 # Assign nodes
 Equipment_ID1 = client.get_node("ns=2;i=2") # Example
-Equipment_ID2 = client.get_node(*)          # TODO: Get a reference to the 'Equipment_ID2' node
-Equipment_ID3 = client.get_node(*)          # TODO: Get a reference to the 'Equipment_ID3' node
+Equipment_ID2 = client.get_node("ns=2;i=3")          # TODO: Get a reference to the 'Equipment_ID2' node
+Equipment_ID3 = client.get_node("ns=2;i=4")          # TODO: Get a reference to the 'Equipment_ID3' node
 
-WorkpieceID = client.get_node(*)            # TODO: Get a reference to the 'WorkpieceID' node
+WorkpieceID = client.get_node("ns=2;i=5")            # TODO: Get a reference to the 'WorkpieceID' node
 
-Conveyor_Status = client.get_node(*)        # TODO: Get a reference to the 'Conveyor_Status' node
-Kuka_Status = client.get_node(*)            # TODO: Get a reference to the 'Kuka_Status' node
-Lathe_Status = client.get_node(*)           # TODO: Get a reference to the 'Lathe_Status' node
+Conveyor_Status = client.get_node("ns=2;i=6")        # TODO: Get a reference to the 'Conveyor_Status' node
+Kuka_Status = client.get_node("ns=2;i=7")            # TODO: Get a reference to the 'Kuka_Status' node
+Lathe_Status = client.get_node("ns=2;i=8")           # TODO: Get a reference to the 'Lathe_Status' node
 
-time_left_conveyor = client.get_node(*)     # TODO: Get a reference to the 'time_left_conveyor' node
-time_left_kuka = client.get_node(*)         # TODO: Get a reference to the 'time_left_kuka' node
-time_left_Lathe = client.get_node(*)        # TODO: Get a reference to the 'time_left_Lathe' node
+time_left_conveyor = client.get_node("ns=2;i=9")     # TODO: Get a reference to the 'time_left_conveyor' node
+time_left_kuka = client.get_node("ns=2;i=10")         # TODO: Get a reference to the 'time_left_kuka' node
+time_left_Lathe = client.get_node("ns=2;i=11")        # TODO: Get a reference to the 'time_left_Lathe' node
 
-current_time = client.get_node(*)           # TODO: Get a reference to the 'current_time' node
+current_time = client.get_node("ns=2;i=13")           # TODO: Get a reference to the 'current_time' node
 
-Kuka_operation = client.get_node(*)         # TODO: Get a reference to the 'Kuka_operation' node
-Lathe_operation = client.get_node(*)        # TODO: Get a reference to the 'Lathe_operation' node
+Kuka_operation = client.get_node("ns=2;i=14")         # TODO: Get a reference to the 'Kuka_operation' node
+Lathe_operation = client.get_node("ns=2;i=15")        # TODO: Get a reference to the 'Lathe_operation' node
 ###################################################################################################
 
 # Flag of switching status
@@ -129,8 +129,8 @@ def StatusRecord():
 
 #############################################################################################
 # Assigning method node ID to the variable
-Start_Conveyor_prog = *     # TODO: Get a reference to the 'Start_Conveyor_prog' method node
-Start_Kuka_Prog2 = *        # TODO: Get a reference to the 'Start_Kuka_Prog2' method node
+Start_Conveyor_prog = method[2]     # TODO: Get a reference to the 'Start_Conveyor_prog' method node
+Start_Kuka_Prog2 = method[6]        # TODO: Get a reference to the 'Start_Kuka_Prog2' method node
 #############################################################################################
 
 # Adding and starting a new thread
@@ -185,7 +185,7 @@ for Current_operation in Company_2_operation_list:
         #############################################################################################
         # Assigning workpiece data and calling Start_Conveyor_prog on server program
         # TODO: add code to link conveyor program start method and pass the current operation detail
-        Workpiece = objects_node.call_method(*, *)
+        Workpiece = objects_node.call_method(Start_Conveyor_prog, Current_operation)
         #############################################################################################
 
     else:
@@ -231,7 +231,7 @@ for Current_operation in Company_2_operation_list:
         #############################################################################################
         # TODO add code to link Start_kuka_Prog2 program start method
         # starting Start_kuka_Prog2 program on kuka
-        return_value_kuka_prog2 = objects_node.call_method(*)
+        return_value_kuka_prog2 = objects_node.call_method(Start_Kuka_Prog2)
         #############################################################################################
 
         sleep(1)
